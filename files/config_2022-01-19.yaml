@@ -1,0 +1,37 @@
+[model]
+model_name=new_model
+pretrain_model_path = 
+
+[data]
+dataset=data/spline/open_splines.h5
+proportion=1
+normals=False
+num_train=3200
+num_val=3000
+num_test=3000
+
+[train]
+batch_size=36
+num_epochs=40
+num_point=1024
+loss_weight=0.9
+
+[optimizer]
+optim=Adam
+lr= 0.0001 # 0.0005
+lr_sch=True
+patience=5
+
+[network]
+grid_size=20
+grid_size_list= 10, 20 #, 30, 40, 50
+num_cp_layer=2
+num_cp_channel=800
+num_knot_layer=2
+num_knot_channel=32
+
+dim_input=3
+num_neighbor=16
+num_block=4
+dim_transformer=64
+mode=1
